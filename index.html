@@ -1,78 +1,108 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>GTA VI | یک پیشنهاد ویژه</title>
+  <meta name="theme-color" content="#09050f">
+  <title>Grand Theft Auto VI | Game Store</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap');
-    :root { --red:#ff3048; --gold:#ffd36a; --bg:#08090d; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:#f5f5f5; background:var(--bg); font-family:'Vazirmatn',Tahoma,sans-serif; }
-    .hero {
-      min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
-      padding:80px 22px; position:relative; overflow:hidden;
-      background:radial-gradient(ellipse at 50% 30%,#54202a 0%,#1b1018 38%,#08090d 75%);
-    }
-    .hero:before { content:""; position:absolute; inset:0; opacity:.22; background:repeating-linear-gradient(135deg,transparent 0 35px,#ffffff10 36px 37px); }
-    .hero-inner { position:relative; max-width:850px; }
-    .eyebrow { color:var(--gold); letter-spacing:4px; font-size:.82rem; font-weight:800; }
-    h1 { direction:ltr; font-family:Impact,'Arial Black',sans-serif; font-size:clamp(4rem,13vw,9rem); line-height:.95; margin:20px 0; color:#fff; text-shadow:0 0 28px #ff304866; }
-    h1 span { color:var(--red); }
-    .subtitle { font-size:clamp(1.05rem,2.5vw,1.35rem); color:#ded5d8; line-height:2; }
-    .cta { display:inline-block; margin-top:25px; padding:13px 27px; border:1px solid var(--red); border-radius:8px; color:#fff; text-decoration:none; font-weight:800; background:#ff30481c; transition:.25s; }
-    .cta:hover { background:var(--red); box-shadow:0 0 25px #ff304899; transform:translateY(-3px); }
-    section { padding:85px 22px; }
-    .wrap { max-width:950px; margin:auto; }
-    h2 { font-size:clamp(1.8rem,5vw,2.7rem); margin:0 0 22px; }
-    h2:after { content:""; display:block; width:75px; height:4px; background:var(--red); margin-top:13px; border-radius:9px; }
-    .intro { background:#0e1017; }
-    .intro p,.card p { color:#c9c9d0; line-height:2.1; font-size:1.05rem; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:17px; margin-top:30px; }
-    .card { padding:24px; border:1px solid #ffffff17; border-radius:14px; background:linear-gradient(145deg,#19151c,#101117); transition:.25s; }
-    .card:hover { border-color:var(--red); transform:translateY(-5px); }
-    .icon { font-size:2rem; }
-    .card h3 { margin:12px 0 5px; color:var(--gold); }
-    .request { text-align:center; background:radial-gradient(ellipse at center,#35151f,#0a0b10 70%); }
-    .request p { max-width:720px; margin:18px auto; line-height:2.2; color:#e1dce0; }
-    .note { color:#999 !important; font-size:.88rem; }
-    footer { text-align:center; padding:25px; color:#777; border-top:1px solid #ffffff12; font-size:.85rem; }
-    footer strong { color:var(--red); }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    :root{--pink:#ed4eb6;--purple:#7925b8;--ink:#09070d;--panel:#1b1424;--muted:#c9bdcf}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#100a17;color:#fff;font-family:Inter,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .topbar{height:72px;background:#050505;display:flex;align-items:center;justify-content:space-between;padding:0 4%;gap:24px;position:relative;z-index:5;border-bottom:1px solid #ffffff18}
+    .brand{font-size:27px;font-weight:900;letter-spacing:-1.5px;white-space:nowrap}.brand span{font-weight:500;margin-left:12px;padding-left:14px;border-left:1px solid #777}
+    .nav{display:flex;gap:clamp(16px,3vw,48px);font-size:13px;font-weight:800;letter-spacing:.2px}.nav a{transition:.2s}.nav a:hover{color:var(--pink)}
+    .tools{display:flex;align-items:center;gap:22px;color:#ddd}.search{border:1px solid #49434f;border-radius:30px;padding:11px 18px;color:#aaa;min-width:190px;font-size:13px}
+    .hero{min-height:475px;position:relative;overflow:hidden;background:linear-gradient(100deg,#230b43 0%,#8d226f 43%,#ef665f 65%,#2d0b4d 100%);isolation:isolate}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#100a17 0%,transparent 35%),radial-gradient(ellipse at 70% 25%,#ffb3a455,transparent 42%),repeating-linear-gradient(115deg,transparent 0 75px,#1a092b22 76px 78px)}
+    .sun{position:absolute;width:340px;height:340px;border-radius:50%;background:linear-gradient(#ffb6c4,#ff6e9d);right:19%;top:70px;opacity:.78;filter:blur(1px);z-index:-1}
+    .skyline{position:absolute;bottom:0;left:0;right:0;height:45%;opacity:.7;background:linear-gradient(0deg,#100719 0 17%,transparent 17%),linear-gradient(90deg,transparent 0 3%,#160b29 3% 6%,transparent 6% 9%,#220d31 9% 13%,transparent 13% 17%,#170a28 17% 21%,transparent 21% 25%,#1b0b2b 25% 29%,transparent 29% 33%,#1b0b2b 33% 37%,transparent 37% 42%,#190a2a 42% 47%,transparent 47% 51%,#1a0b2c 51% 55%,transparent 55% 60%,#210d31 60% 65%,transparent 65% 70%,#170a28 70% 74%,transparent 74% 79%,#200b32 79% 84%,transparent 84% 89%,#180a28 89% 94%,transparent 94%);clip-path:polygon(0 30%,5% 30%,5% 5%,9% 5%,9% 40%,14% 40%,14% 18%,18% 18%,18% 48%,23% 48%,23% 10%,28% 10%,28% 40%,33% 40%,33% 0,38% 0,38% 50%,43% 50%,43% 20%,48% 20%,48% 42%,53% 42%,53% 8%,59% 8%,59% 45%,65% 45%,65% 17%,70% 17%,70% 44%,76% 44%,76% 4%,81% 4%,81% 40%,87% 40%,87% 13%,92% 13%,92% 45%,100% 45%,100% 100%,0 100%)}
+    .hero-inner{max-width:1250px;margin:auto;min-height:475px;padding:48px 24px 52px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
+    .copy{max-width:560px}.pill{display:inline-block;background:#ed78ce;color:#210a24;font-size:13px;font-weight:900;padding:9px 17px;border-radius:18px;margin-bottom:15px}
+    h1{font-size:clamp(40px,5vw,66px);line-height:1.05;letter-spacing:-2.8px;margin:0 0 24px;font-weight:900}
+    .subhead{font-size:21px;font-weight:800;margin:0 0 16px}
+    .platforms{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+    .platform{border:1px solid #ffffff70;background:#170b2b88;border-radius:9px;padding:14px 23px;font-weight:800;font-size:14px}
+    .platform.selected{background:#fff;color:#111;border-color:#fff}
+    .action{display:inline-block;background:var(--pink);color:#160819;font-weight:900;font-size:18px;border-radius:40px;padding:18px 40px;box-shadow:0 8px 30px #e84db866}
+    .shipping{margin-top:24px;font-size:14px;font-weight:700;color:#fff}
+    .art{height:390px;position:relative;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;transform:rotate(2deg)}
+    .art-panel{border:5px solid #160b22;background:linear-gradient(145deg,#f58cbb,#56218d 55%,#160a2c);box-shadow:0 8px 28px #18052199;display:flex;align-items:end;justify-content:center;overflow:hidden;position:relative}
+    .art-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 25%,#ffd6c9aa,transparent 35%),linear-gradient(0deg,#12051fdd,transparent 65%)}
+    .art-panel:nth-child(2){background:linear-gradient(145deg,#ffb07b,#a72b70 55%,#230c39)}
+    .art-panel:nth-child(3){background:linear-gradient(145deg,#8a62cf,#30205c 60%,#100a21)}
+    .art-panel b{position:relative;text-align:center;font-size:clamp(16px,2vw,27px);text-shadow:0 3px 8px #000;padding:15px 4px}
+    .logo{position:absolute;z-index:2;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-4deg);font-size:clamp(35px,5vw,65px);font-weight:1000;line-height:.8;text-align:center;letter-spacing:-3px;color:white;-webkit-text-stroke:2px #130b1e;text-shadow:4px 5px 0 #14091f,0 0 16px #fff}
+    .rating{position:absolute;right:-12px;bottom:18px;z-index:3;background:#160c22;border:5px solid var(--pink);border-radius:24px;padding:17px 22px;text-align:center;box-shadow:0 0 28px #ed4eb677;min-width:155px}
+    .rating strong{font-size:46px;display:block}.rating span{font-size:12px;line-height:1.4;font-weight:900;display:block;border-top:2px solid #fff;padding-top:8px;margin-top:5px}
+    .tabs{background:#100a17;border-bottom:1px solid #4a244b;display:flex;gap:28px;max-width:1250px;margin:auto;padding:20px 24px 0;overflow:auto}
+    .tabs a{font-weight:800;font-size:14px;padding:13px 12px 16px;white-space:nowrap;color:#e8ddec;border-bottom:4px solid transparent}
+    .tabs a.active,.tabs a:hover{border-color:var(--pink);background:linear-gradient(#28132f,transparent)}
+    .content{max-width:1250px;margin:auto;padding:32px 24px 75px;display:grid;grid-template-columns:1fr 1fr;gap:45px}
+    .description{font-size:16px;line-height:1.85;color:#f0eaf3}
+    .info-card{background:linear-gradient(120deg,#2a1c35,#1a1323);border-radius:14px;padding:22px;display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .rating-box{border:3px solid #eee;background:#fff;color:#111;font-size:28px;font-weight:900;padding:8px 10px;line-height:1}
+    .info-card p{line-height:1.7;margin:0;font-size:14px}
+    .release{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #59455f;font-size:15px}
+    .release strong{font-weight:800}
+    .section-extra{max-width:1250px;margin:0 auto;padding:20px 24px 65px;scroll-margin-top:25px}
+    .section-extra h2{font-size:25px}.section-extra p{color:var(--muted);line-height:1.8}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .shot{height:155px;border-radius:12px;background:linear-gradient(135deg,#f38a9d,#4d1a77 65%,#130b22);display:flex;align-items:end;padding:15px;font-weight:800}
+    footer{border-top:1px solid #35243d;padding:25px;text-align:center;color:#8e8295;font-size:12px}
+    @media(max-width:800px){.nav{display:none}.search{display:none}.hero-inner{grid-template-columns:1fr;padding-top:38px}.art{height:290px;max-width:520px;width:100%;margin:auto}.rating{right:0}.content{grid-template-columns:1fr;gap:20px}.topbar{height:62px}.hero{min-height:auto}.hero-inner{min-height:0}.tabs{gap:8px}.sun{right:10%;width:260px;height:260px}}
+    @media(max-width:450px){.art{height:230px}.rating{min-width:110px;padding:10px}.rating strong{font-size:32px}.rating span{font-size:9px}.platform{padding:12px 14px}.action{font-size:16px;padding:15px 30px}.gallery{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">A SPECIAL PROPOSAL</div>
-      <h1>GRAND THEFT<br><span>AUTO VI</span></h1>
-      <p class="subtitle">یک پیشنهاد ویژه برای تجربه‌ی یکی از موردانتظارترین بازی‌های ویدیویی</p>
-      <a class="cta" href="#proposal">دیدن پیشنهاد من</a>
-    </div>
+  <header class="topbar">
+    <a class="brand" href="#top">R★ <span>Store</span></a>
+    <nav class="nav"><a href="#details">GAMES⌄</a><a href="#details">GAME ADD-ONS⌄</a><a href="#details">GTA+</a><a href="#details">MERCHANDISE⌄</a><a href="#gallery">FEATURED⌄</a></nav>
+    <div class="tools"><div class="search">⌕ &nbsp; Search</div><span>♙</span><span>♧</span></div>
   </header>
 
-  <section class="intro">
-    <div class="wrap">
-      <h2>چرا GTA VI؟</h2>
-      <p>این بازی فقط یک خرید هیجانی نیست؛ می‌تونیم قبل از خرید، درباره‌ی قیمت، محتوای بازی، رده‌بندی سنی و مناسب بودنش برای من با هم تحقیق کنیم و بعد تصمیم بگیریم.</p>
-      <div class="cards">
-        <article class="card"><div class="icon">🎮</div><h3>یک تجربه‌ی بزرگ</h3><p>یک بازی جهان‌باز با دنیایی گسترده و جزئیات فراوان.</p></article>
-        <article class="card"><div class="icon">🤝</div><h3>تصمیم با توافق</h3><p>قبل از خرید، همه‌ی شرایط و نگرانی‌ها را با هم بررسی می‌کنیم.</p></article>
-        <article class="card"><div class="icon">💳</div><h3>برنامه‌ریزی هزینه</h3><p>می‌توانیم بودجه و زمان مناسب خرید را از قبل مشخص کنیم.</p></article>
+  <main id="top">
+    <section class="hero">
+      <div class="sun"></div><div class="skyline"></div>
+      <div class="hero-inner">
+        <div class="copy">
+          <span class="pill">NOW AVAILABLE</span>
+          <h1>Grand Theft<br>Auto VI</h1>
+          <p class="subhead">Select Platform</p>
+          <div class="platforms"><span class="platform selected">▶ &nbsp; PS5</span><span class="platform">◉ &nbsp; XBOX SERIES X|S</span></div>
+          <a class="action" href="#details">Explore Game</a>
+          <p class="shipping">✦ &nbsp; Available worldwide since November 19, 2026</p>
+        </div>
+        <div class="art" aria-label="Stylized Grand Theft Auto VI promotional artwork">
+          <div class="art-panel"><b>JASON<br>DUVAL</b></div><div class="art-panel"><b>LUCIA<br>CAMINOS</b></div><div class="art-panel"><b>VICE<br>CITY</b></div>
+          <div class="logo">grand<br>theft<br>auto <span style="color:#ed4eb6">VI</span></div>
+          <div class="rating"><strong>17+</strong><span>MATURE<br>ESRB RATING</span></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="request" id="proposal">
-    <div class="wrap">
-      <div class="eyebrow">THE PROPOSAL</div>
-      <h2>درخواست من از شما ❤️</h2>
-      <p>بابا، دوست دارم GTA VI رو داشته باشم؛ اما می‌خوام قبلش با هم درباره‌ی محتوای بازی، رده‌بندی سنی رسمی و هزینه‌اش صحبت کنیم. اگر به این نتیجه رسیدیم که مناسب هست، برای خریدش برنامه‌ریزی کنیم.</p>
-      <p class="note">رده‌بندی رسمی ESRB بازی M (مناسب بزرگسالان ۱۷ سال به بالا) است و شامل محتوای بزرگسالانه می‌شود. لطفاً پیش از هر تصمیم، جزئیات رده‌بندی را با هم بررسی کنیم.</p><p class="note">این یک صفحه‌ی شخصی و طرفداری است و هیچ وابستگی رسمی به Rockstar Games ندارد.</p><p class="note"><a style="color:#ffd36a" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">صفحه رسمی GTA VI در Rockstar Games</a></p>
-    </div>
-  </section>
+    <nav class="tabs">
+      <a class="active" href="#details">Game Details</a><a href="#videos">Videos</a><a href="#gallery">Screenshots</a><a href="#editions">Compare Editions</a><a href="#faq">FAQ</a>
+    </nav>
 
-  <footer>MADE WITH ❤️ BY <strong>SHAYANGEM</strong> · FAN-MADE PAGE</footer>
+    <section class="content" id="details">
+      <div><p class="description">Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America, in the middle of a criminal conspiracy stretching across the state of Leonida — forced to rely on each other more than ever if they want to make it out alive.</p></div>
+      <div>
+        <div class="info-card"><div class="rating-box">M<br><small style="font-size:10px">17+</small></div><p><strong>ESRB: MATURE 17+</strong><br>Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content, Use of Drugs and Alcohol.</p></div>
+        <div class="release"><strong>Release Date</strong><span>November 19, 2026</span></div>
+        <div class="release"><strong>Platforms</strong><span>PlayStation 5 · Xbox Series X|S</span></div>
+        <div class="release"><strong>Developer</strong><span>Rockstar Games</span></div>
+      </div>
+    </section>
+
+    <section class="section-extra" id="videos"><h2>Videos</h2><p>Explore official trailers and videos on the Rockstar Games website.</p><a class="action" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">Visit Rockstar Games</a></section>
+    <section class="section-extra" id="gallery"><h2>Screenshots</h2><div class="gallery"><div class="shot">VICE CITY</div><div class="shot">LEONIDA</div><div class="shot">JASON & LUCIA</div></div><p>For official screenshots and artwork, visit Rockstar Games.</p></section>
+    <section class="section-extra" id="editions"><h2>Compare Editions</h2><p>Grand Theft Auto VI is available in Standard and Ultimate editions. Check the official store for current edition details and regional availability.</p></section>
+    <section class="section-extra" id="faq"><h2>FAQ</h2><p><strong>Which platforms are supported?</strong><br>PlayStation 5 and Xbox Series X|S.</p><p><strong>What is the age rating?</strong><br>ESRB MATURE 17+. Please review the rating and content information with a parent or guardian.</p><p><strong>Where can I find official information?</strong><br>On the official Rockstar Games website.</p></section>
+  </main>
+  <footer>FAN-MADE STORE PAGE · NOT AFFILIATED WITH ROCKSTAR GAMES · MADE BY SHAYANGEM</footer>
 </body>
 </html>
